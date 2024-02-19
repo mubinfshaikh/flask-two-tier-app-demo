@@ -15,13 +15,13 @@ Before you begin, make sure you have the following installed:
 1. Clone this repository (if you haven't already):
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/mubinfshaikh/flask-two-tier-app-demo.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd your-repo-name
+   cd flask-two-tier-app-demo
    ```
 
 3. Create a `.env` file in the project directory to store your MySQL environment variables:
@@ -80,7 +80,7 @@ docker-compose down
 
 - First create a docker image from Dockerfile
 ```bash
-docker build -t flaskapp .
+docker build -t flask-two-tier-app .
 ```
 
 - Now, make sure that you have created a network using following command
@@ -96,7 +96,7 @@ docker run -d --name mysql -v mysql-data:/var/lib/mysql -v ./message.sql:/docker
 ```
 ii) Backend container
 ```bash
-docker run -d --name flaskapp -v mysql-data:/var/lib/mysql -v ./message.sql:/docker-entrypoint-initdb.d/message.sql --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=admin -e MYSQL_DB=mydb -p 5000:5000 flaskapp:latest
+docker run -d --name flask-two-tier-app -v mysql-data:/var/lib/mysql -v ./message.sql:/docker-entrypoint-initdb.d/message.sql --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=admin -e MYSQL_DB=mydb -p 5000:5000 flask-two-tier-app:latest
 ```
 
 ## Notes

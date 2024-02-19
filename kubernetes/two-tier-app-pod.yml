@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-tier-app-pod
+spec:
+  containers:
+  - name: two-tier-app-pod
+    image: mubinfshaikh/flask-two-tier-app:latest
+    env:
+      - name: MYSQL_HOST
+        value: "10.88.19.219"          # this is your mysql's service cluster IP, Make sure to change it with yours
+      - name: MYSQL_USER
+        value: "mubin"
+      - name: MYSQL_PASSWORD
+        value: "d90ka59mcH9a343"
+      - name: MYSQL_DB
+        value: "flaskdb"
+    ports:
+      - containerPort: 5000
+    imagePullPolicy: Always
+    

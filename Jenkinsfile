@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage("Code"){
             steps{
-                git url: "https://github.com/mubinfshaikh/flask-two-tier-app-demo.git", branch: "jenkins"
+                git url: "https://github.com/mubinfshaikh/flask-two-tier-app-demo.git", branch: "main"
             }
         }
         stage("Build"){
